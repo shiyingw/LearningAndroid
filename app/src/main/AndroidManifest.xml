@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".clickeffect.ClickEffectActivity" />
         <activity android:name=".permission.PermissionActivity" />
+        <activity android:name=".transferpara.TransferParaActivity" />
     </application>
 
 </manifest>

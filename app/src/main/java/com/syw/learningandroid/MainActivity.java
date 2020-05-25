@@ -1,14 +1,19 @@
 package com.syw.learningandroid;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.gson.Gson;
 import com.syw.learningandroid.clickeffect.ClickEffectActivity;
 import com.syw.learningandroid.permission.PermissionActivity;
+import com.syw.learningandroid.transferpara.FriendBean;
+import com.syw.learningandroid.transferpara.TransferParaActivity;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,5 +39,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button buttonTransferPara = findViewById(R.id.btn_transfer_para);
+        buttonTransferPara.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TransferParaActivity.class);
+                String friendBeanId = getFriendId();
+                // object to json
+                intent.putExtra("friend_bean_list_key", friendBeanId);
+                startActivity(intent);
+
+            }
+        });
+    }
+
+    private String getFriendId() {
+        return "18";
     }
 }
