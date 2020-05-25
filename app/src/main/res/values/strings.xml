@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LearningAndroid</string>
+    <string name="img_title_return_description">这是返回按钮</string>
+    <string name="click_effect">点击效果</string>
+</resources>
