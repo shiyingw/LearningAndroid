@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
+import com.syw.learningandroid.camera.CameraActivity;
 import com.syw.learningandroid.clickeffect.ClickEffectActivity;
 import com.syw.learningandroid.permission.PermissionActivity;
 import com.syw.learningandroid.transferpara.FriendBean;
@@ -25,8 +26,7 @@ public class MainActivity extends AppCompatActivity {
         buttonClickEffect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ClickEffectActivity.class);
-                startActivity(intent);
+                openActivity(ClickEffectActivity.class);
             }
         });
 
@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
         buttonRequirePermission.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, PermissionActivity.class);
-                startActivity(intent);
+                openActivity(PermissionActivity.class);
             }
         });
 
@@ -51,9 +50,22 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        Button buttonCamera = findViewById(R.id.btn_open_camera);
+        buttonCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(CameraActivity.class);
+            }
+        });
     }
 
     private String getFriendId() {
         return "18";
+    }
+
+    private void openActivity(Class clazz){
+        Intent intent = new Intent(MainActivity.this, clazz);
+        startActivity(intent);
     }
 }

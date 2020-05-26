@@ -25,4 +25,10 @@
         android:layout_height="wrap_content"
         android:text="@string/transfer_para"/>
 
+    <Button
+        android:id="@+id/btn_open_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/open_camera"/>
+
 </LinearLayout>
