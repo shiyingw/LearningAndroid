@@ -31,4 +31,11 @@
         android:layout_height="wrap_content"
         android:text="@string/open_camera"/>
 
+    <Button
+        android:id="@+id/btn_open_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/fragment_learning"/>
+
 </LinearLayout>

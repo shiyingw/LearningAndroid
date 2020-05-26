@@ -5,4 +5,5 @@
     <string name="require_permission">申请权限</string>
     <string name="transfer_para">传递参数</string>
     <string name="open_camera">打开相机</string>
+    <string name="fragment_learning">Fragment 学习</string>
 </resources>

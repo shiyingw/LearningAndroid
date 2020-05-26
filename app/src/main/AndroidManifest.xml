@@ -24,6 +24,7 @@
         <activity android:name=".permission.PermissionActivity" />
         <activity android:name=".transferpara.TransferParaActivity" />
         <activity android:name=".camera.CameraActivity" />
+        <activity android:name=".fragment.SingleFragmentActivity" />
     </application>
 
 </manifest>

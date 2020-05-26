@@ -6,10 +6,12 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
 import com.google.gson.Gson;
 import com.syw.learningandroid.camera.CameraActivity;
 import com.syw.learningandroid.clickeffect.ClickEffectActivity;
+import com.syw.learningandroid.fragment.SingleFragmentActivity;
 import com.syw.learningandroid.permission.PermissionActivity;
 import com.syw.learningandroid.transferpara.FriendBean;
 import com.syw.learningandroid.transferpara.TransferParaActivity;
@@ -56,6 +58,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openActivity(CameraActivity.class);
+            }
+        });
+
+        Button buttonFragment = findViewById(R.id.btn_open_fragment);
+        buttonFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(SingleFragmentActivity.class);
             }
         });
     }
