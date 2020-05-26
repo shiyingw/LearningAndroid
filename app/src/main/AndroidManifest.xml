@@ -20,10 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".clickeffect.ClickEffectActivity" />
-        <activity android:name=".permission.PermissionActivity" />
-        <activity android:name=".transferpara.TransferParaActivity" />
-        <activity android:name=".camera.CameraActivity" />
         <activity android:name=".fragment.SingleFragmentActivity" />
     </application>
 

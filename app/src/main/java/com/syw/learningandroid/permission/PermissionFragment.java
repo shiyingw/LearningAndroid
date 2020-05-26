@@ -4,22 +4,27 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.syw.learningandroid.R;
 
-public class PermissionActivity extends AppCompatActivity {
+public class PermissionFragment extends Fragment {
+
+
+
+    @Nullable
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_premission);
-        Button buttonPermission = findViewById(R.id.btn_require_permission);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+       View view = inflater.inflate(R.layout.fragment_premission, container, false);
+        Button buttonPermission = view.findViewById(R.id.btn_require_permission);
         buttonPermission.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -27,21 +32,14 @@ public class PermissionActivity extends AppCompatActivity {
             }
         });
 
+        return view;
 
     }
 
     private void requirePermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            if (getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 10);
-            }
-        }
-    }
-
-    private void requirePermissions() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 60);
             }
         }
     }
@@ -51,7 +49,7 @@ public class PermissionActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 10) {
             for (int grantResult : grantResults) {
-                Toast.makeText(this, "grantResult: " + grantResult, Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), "grantResult: " + grantResult, Toast.LENGTH_SHORT).show();
             }
         }
     }

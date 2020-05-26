@@ -6,17 +6,14 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.Fragment;
 
-import com.google.gson.Gson;
-import com.syw.learningandroid.camera.CameraActivity;
-import com.syw.learningandroid.clickeffect.ClickEffectActivity;
+import com.syw.learningandroid.camera.CameraFragment;
+import com.syw.learningandroid.clickeffect.ClickEffectFragment;
+import com.syw.learningandroid.fragment.LearningFragment;
 import com.syw.learningandroid.fragment.SingleFragmentActivity;
-import com.syw.learningandroid.permission.PermissionActivity;
-import com.syw.learningandroid.transferpara.FriendBean;
-import com.syw.learningandroid.transferpara.TransferParaActivity;
-
-import java.util.List;
+import com.syw.learningandroid.permission.PermissionFragment;
+import com.syw.learningandroid.transferpara.TransferParaFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         buttonClickEffect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openActivity(ClickEffectActivity.class);
+                openFragment(ClickEffectFragment.class.getName());
             }
         });
 
@@ -36,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         buttonRequirePermission.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openActivity(PermissionActivity.class);
+                openFragment(PermissionFragment.class.getName());
             }
         });
 
@@ -44,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
         buttonTransferPara.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TransferParaActivity.class);
+                Intent intent = new Intent(MainActivity.this, SingleFragmentActivity.class);
+                intent.putExtra(SingleFragmentActivity.FRAGMENT_NAME, TransferParaFragment.class.getName());
                 String friendBeanId = getFriendId();
                 // object to json
                 intent.putExtra("friend_bean_list_key", friendBeanId);
@@ -57,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         buttonCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity(CameraActivity.class);
+                openFragment(CameraFragment.class.getName());
             }
         });
 
@@ -65,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         buttonFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity(SingleFragmentActivity.class);
+                openFragment(LearningFragment.class.getName());
             }
         });
     }
@@ -77,5 +75,12 @@ public class MainActivity extends AppCompatActivity {
     private void openActivity(Class clazz){
         Intent intent = new Intent(MainActivity.this, clazz);
         startActivity(intent);
+    }
+
+    private void openFragment(String fragmentName){
+        Intent intent =new Intent(MainActivity.this, SingleFragmentActivity.class);
+        intent.putExtra(SingleFragmentActivity.FRAGMENT_NAME, fragmentName);
+        startActivity(intent);
+
     }
 }
