@@ -1,29 +1,20 @@
 package com.syw.learningandroid.clickeffect;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import com.syw.learningandroid.R;
+import com.syw.learningandroid.base.BaseFragment;
 
-public class ClickEffectFragment extends Fragment {
+public class ClickEffectFragment extends BaseFragment {
+
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    protected int getLayoutId() {
+        return R.layout.fragment_click_effect;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // 初始化布局：将XML转换为对象
-        View view = inflater.inflate(R.layout.fragment_click_effect, container, false);
+    protected void initView(View view) {
         ImageView imageView = view.findViewById(R.id.img_click_effect);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +22,5 @@ public class ClickEffectFragment extends Fragment {
                 getActivity().finish();
             }
         });
-        return view;
     }
 }

@@ -3,27 +3,25 @@ package com.syw.learningandroid.permission;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import com.syw.learningandroid.R;
+import com.syw.learningandroid.base.BaseFragment;
 
-public class PermissionFragment extends Fragment {
+public class PermissionFragment extends BaseFragment {
 
 
-
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       View view = inflater.inflate(R.layout.fragment_premission, container, false);
+    protected int getLayoutId() {
+        return R.layout.fragment_premission;
+    }
+
+    @Override
+    protected void initView(View view) {
         Button buttonPermission = view.findViewById(R.id.btn_require_permission);
         buttonPermission.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,9 +29,6 @@ public class PermissionFragment extends Fragment {
                 requirePermission();
             }
         });
-
-        return view;
-
     }
 
     private void requirePermission() {

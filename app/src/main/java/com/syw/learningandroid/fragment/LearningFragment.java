@@ -1,25 +1,20 @@
 package com.syw.learningandroid.fragment;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import com.syw.learningandroid.R;
+import com.syw.learningandroid.base.BaseFragment;
 
-public class LearningFragment extends Fragment {
+public class LearningFragment extends BaseFragment {
 
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    protected int getLayoutId() {
+        return R.layout.fragment_learning;
+    }
 
-        View view = inflater.inflate(R.layout.fragment_learning, container, false);
+    @Override
+    protected void initView(View view) {
 
-        return view;
     }
 }
