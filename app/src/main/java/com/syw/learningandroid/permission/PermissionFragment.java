@@ -10,7 +10,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.syw.learningandroid.R;
+import com.syw.learningandroid.R2;
 import com.syw.learningandroid.base.BaseFragment;
+
+import butterknife.OnClick;
 
 public class PermissionFragment extends BaseFragment {
 
@@ -22,16 +25,11 @@ public class PermissionFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-        Button buttonPermission = view.findViewById(R.id.btn_require_permission);
-        buttonPermission.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                requirePermission();
-            }
-        });
+
     }
 
-    private void requirePermission() {
+    @OnClick(R2.id.btn_require_permission)
+    protected void requirePermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 10);

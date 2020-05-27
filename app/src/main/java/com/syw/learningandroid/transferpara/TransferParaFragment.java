@@ -5,9 +5,15 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.syw.learningandroid.R;
+import com.syw.learningandroid.R2;
 import com.syw.learningandroid.base.BaseFragment;
 
+import butterknife.BindView;
+
 public class TransferParaFragment extends BaseFragment {
+
+    @BindView(R2.id.tv_friend_bean)
+    TextView textView;
 
 
     @Override
@@ -19,7 +25,6 @@ public class TransferParaFragment extends BaseFragment {
     protected void initView(View view) {
         Intent intent = getActivity().getIntent();
         String friendBeanId = intent.getStringExtra("friend_bean_list_key");
-        TextView textView = view.findViewById(R.id.tv_friend_bean);
         textView.setText("好友Id：" + friendBeanId);
     }
 }

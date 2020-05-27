@@ -15,14 +15,20 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import com.syw.learningandroid.R;
+import com.syw.learningandroid.R2;
 import com.syw.learningandroid.base.BaseFragment;
 
 import java.io.File;
 
+import butterknife.BindView;
+import butterknife.OnClick;
+
 public class CameraFragment extends BaseFragment {
 
     private Uri uri;
-    private ImageView imageView;
+
+    @BindView(R2.id.iv_photo)
+    protected ImageView imageView;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,18 +46,11 @@ public class CameraFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-        Button button = view.findViewById(R.id.btn_open_camera);
-        imageView = view.findViewById(R.id.iv_photo);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openCamera();
-            }
-        });
     }
 
-    private void openCamera() {
+    @OnClick(R2.id.btn_open_camera)
+    protected void openCamera() {
         // 新建文件夹
         File dir = new File(Environment.getExternalStorageDirectory() + "/LearningAndroid");
         dir.mkdirs();
