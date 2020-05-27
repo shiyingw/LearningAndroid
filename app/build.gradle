@@ -37,7 +37,15 @@ dependencies {
     implementation  'com.google.code.gson:gson:2.8.6'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
+    // ButterKnife
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+
+    // CircleImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // gilde
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
 }
