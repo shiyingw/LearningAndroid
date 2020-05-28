@@ -40,26 +40,26 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        private ImageView userPhotoView;
-        private TextView userNameView;
-        private ImageView userCallView;
-        private FriendInfo mFriendInfo;
+            private ImageView userPhotoView;
+            private TextView userNameView;
+            private ImageView userCallView;
+            private FriendInfo mFriendInfo;
 
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            userPhotoView = itemView.findViewById(R.id.user_photo);
-            userNameView = itemView.findViewById(R.id.user_name);
-            userCallView = itemView.findViewById(R.id.iv_call);
-        }
+            public ViewHolder(@NonNull View itemView) {
+                super(itemView);
+                userPhotoView = itemView.findViewById(R.id.user_photo);
+                userNameView = itemView.findViewById(R.id.user_name);
+                userCallView = itemView.findViewById(R.id.iv_call);
+            }
 
-        void bind(FriendInfo friendInfo) {
-          mFriendInfo = friendInfo;
+            void bind(FriendInfo friendInfo) {
+                mFriendInfo = friendInfo;
 
-          loadUserPhoto();
+                loadUserPhoto();
 
-          setUserName();
-        }
+                setUserName();
+            }
 
         private void setUserName() {
             userNameView.setText(mFriendInfo.getUser_name());

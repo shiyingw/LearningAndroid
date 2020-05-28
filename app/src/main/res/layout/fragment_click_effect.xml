@@ -8,8 +8,8 @@
         android:id="@+id/img_click_effect"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/selector_title_return"
         android:clickable="true"
-        android:contentDescription="@string/img_title_return_description" />
+        android:contentDescription="@string/img_title_return_description"
+        android:src="@drawable/selector_title_return" />
 
 </LinearLayout>

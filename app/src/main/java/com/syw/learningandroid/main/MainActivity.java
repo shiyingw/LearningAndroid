@@ -12,6 +12,7 @@ import com.syw.learningandroid.clickeffect.ClickEffectFragment;
 import com.syw.learningandroid.fragment.LearningFragment;
 import com.syw.learningandroid.friend.FriendFragment;
 import com.syw.learningandroid.permission.PermissionFragment;
+import com.syw.learningandroid.setting.SettingFragment;
 import com.syw.learningandroid.transferpara.TransferParaFragment;
 
 import java.util.ArrayList;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new FragmentModel("打开相机", CameraFragment.class.getName()));
         list.add(new FragmentModel("Fragment 学习", LearningFragment.class.getName()));
         list.add(new FragmentModel("学习RecyclerView", FriendFragment.class.getName()));
+        list.add(new FragmentModel("设置", SettingFragment.class.getName()));
         return list;
     }
 
