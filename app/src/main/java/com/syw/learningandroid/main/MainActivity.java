@@ -11,6 +11,7 @@ import com.syw.learningandroid.camera.CameraFragment;
 import com.syw.learningandroid.clickeffect.ClickEffectFragment;
 import com.syw.learningandroid.fragment.LearningFragment;
 import com.syw.learningandroid.friend.FriendFragment;
+import com.syw.learningandroid.io.IOFragment;
 import com.syw.learningandroid.permission.PermissionFragment;
 import com.syw.learningandroid.setting.SettingFragment;
 import com.syw.learningandroid.transferpara.TransferParaFragment;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new FragmentModel("Fragment 学习", LearningFragment.class.getName()));
         list.add(new FragmentModel("学习RecyclerView", FriendFragment.class.getName()));
         list.add(new FragmentModel("设置", SettingFragment.class.getName()));
+        list.add(new FragmentModel("io", IOFragment.class.getName()));
         return list;
     }
 
